@@ -14,6 +14,7 @@ public static class BasketModule
     {
 
         services.AddScoped<IBasketRepository, BasketRepository>();
+        services.Decorate<IBasketRepository, CachedBasketRepository>();
 
         var connectionString = configuration.GetConnectionString("Database");
         services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();

@@ -3,7 +3,7 @@
 public record GetBasketQuery(string UserName)
     : IQuery<GetBasketResult>;
 
-public record GetBasketResult(ShoppingCartDto ShoppingCartDto);
+public record GetBasketResult(ShoppingCartDto ShoppingCart);
 internal class GetBasketQueryHandler(IBasketRepository repository)
     : IQueryHandler<GetBasketQuery, GetBasketResult>
 {
@@ -14,3 +14,4 @@ internal class GetBasketQueryHandler(IBasketRepository repository)
         return new GetBasketResult(basketDto);
     }
 }
+

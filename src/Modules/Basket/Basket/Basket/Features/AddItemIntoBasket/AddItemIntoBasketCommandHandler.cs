@@ -23,14 +23,14 @@ internal class AddItemIntoBasketCommandHandler(IBasketRepository repository)
        var shoppingCart = await repository.GetBasket(command.UserName, false, cancellationToken);
 
         shoppingCart.AddItem(
-            Guid.NewGuid(),
+            command.ShoppingCartItemDto.ProductId,
             command.ShoppingCartItemDto.Quantity,
             command.ShoppingCartItemDto.Color,
             command.ShoppingCartItemDto.Price,
             command.ShoppingCartItemDto.ProductName
             );
 
-        await repository.SaveChangesAsync(cancellationToken);
+        await repository.SaveChangesAsync(command.UserName, cancellationToken);
 
         return new AddItemIntoBasketResult(shoppingCart.Id);
     }

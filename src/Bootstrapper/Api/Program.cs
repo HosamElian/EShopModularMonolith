@@ -18,6 +18,10 @@ builder.Services
 builder.Services
     .AddMediatRWithAssemblies(catalogAssembly, basketAssembly);
 
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+});
 // Modules Services Catalog, Basket, Ordering
 builder.Services
     .AddCatalogModule(builder.Configuration)

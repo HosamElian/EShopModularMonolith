@@ -28,7 +28,7 @@ namespace Basket.Basket.Models
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(quantity);
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(price);
 
-            var existingItme = _items.FirstOrDefault(i=> i.Id == productId);
+            var existingItme = _items.FirstOrDefault(i=> i.ProductId == productId);
 
             if (existingItme != null)
             {
