@@ -7,13 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\Shared\Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Basket\EventHandlers\" />
     <Folder Include="Basket\Features\CheckoutBasket\" />
     <Folder Include="Basket\Features\UpdateItemPriceInBasket\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Shared\Shared.csproj" />
+    <ProjectReference Include="..\..\Catalog\Catalog.Contracts\Catalog.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

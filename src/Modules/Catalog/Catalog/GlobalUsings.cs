@@ -7,7 +7,7 @@ global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Catalog.Data;
 global using Shared.Data;
 global using Shared.Data.Seed;
-global using Shared.CQRS;
+global using Shared.Contracts.CQRS;
 global using Catalog.Products.Dtos;
 global using Mapster;
 global using MediatR;

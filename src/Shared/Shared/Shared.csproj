@@ -21,5 +21,8 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Shared.Contracts\Shared.Contracts.csproj" />
+	</ItemGroup>
 
 </Project>
