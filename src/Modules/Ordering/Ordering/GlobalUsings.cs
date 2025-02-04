@@ -1,1 +1,12 @@
-﻿
+﻿global using Ordering.Orders.ValueObjects;
+global using Shared.DDD;
+global using Ordering.Orders.Models;
+global using Microsoft.AspNetCore.Builder;
+global using Carter;
+global using Mapster;
+global using MediatR;
+global using Microsoft.EntityFrameworkCore;
+global using Ordering.Data;
+global using Ordering.Orders.Dtos;
+global using Shared.Contracts.CQRS;
+global using Ordering.Orders.Exceptions;

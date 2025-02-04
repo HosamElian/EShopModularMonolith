@@ -8,3 +8,4 @@ global using Serilog;
 global using FluentValidation;
 global using Shared.Behaviors;
 global using System.Reflection;
+global using Shared.Messaging.Extensions;
