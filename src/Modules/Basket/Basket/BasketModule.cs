@@ -1,4 +1,5 @@
-﻿using Basket.Data.Repository;
+﻿using Basket.Data.Processors;
+using Basket.Data.Repository;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +27,7 @@ public static class BasketModule
         });
 
 
+        services.AddHostedService<OutboxProcessor>();
 
         return services;
     }

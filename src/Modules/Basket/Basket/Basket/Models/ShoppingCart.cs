@@ -1,6 +1,4 @@
-﻿using Shared.DDD;
-
-namespace Basket.Basket.Models
+﻿namespace Basket.Basket.Models
 {
     public class ShoppingCart : Aggregate<Guid>
     {
@@ -8,10 +6,10 @@ namespace Basket.Basket.Models
         private readonly List<ShoppingCartItem> _items = new();
         public IReadOnlyList<ShoppingCartItem> Items => _items.AsReadOnly();
 
-        public decimal  TotalPrice => Items.Sum(x => x.Price * x.Quantity);
+        public decimal TotalPrice => Items.Sum(x => x.Price * x.Quantity);
 
 
-        public static ShoppingCart Create(Guid id , string userName)
+        public static ShoppingCart Create(Guid id, string userName)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(userName);
 
@@ -28,7 +26,7 @@ namespace Basket.Basket.Models
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(quantity);
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(price);
 
-            var existingItme = _items.FirstOrDefault(i=> i.ProductId == productId);
+            var existingItme = _items.FirstOrDefault(i => i.ProductId == productId);
 
             if (existingItme != null)
             {
